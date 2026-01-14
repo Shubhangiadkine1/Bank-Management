@@ -1,5 +1,5 @@
-import React from 'react'
-import { BrowserRouter, Routes ,Route} from 'react-router-dom'
+import React, { Suspense } from 'react'
+import { BrowserRouter, Routes ,Route, useLocation} from 'react-router-dom'
 import Home from './pages/Home'
 import Header from './componant/Header'
 import Contact from './pages/Contact'
@@ -8,26 +8,29 @@ import Accounts from './pages/Accounts'
 import Hero from './componant/Hero'
 import Footer from './componant/footer'
 import Login from './pages/Authentication/Login'
-
+import "./App.css"
+import Create_Account from './pages/Create_Account'
 const App = () => {
+  const location = useLocation()
+
+  const hideLayout = location.pathname === '/login';
+
   return (
-    <div>
-       <BrowserRouter>
-       <Header/>
-       <h1>Bye</h1>
+<Suspense>
+  {!hideLayout &&  <Header/>}
+
        <Routes>
         <Route path="/Hero" element={<Hero />} />
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/loans" element={<Loans />} />
         <Route path="/accounts" element={<Accounts />} />
+        <Route path="/create-account" element={<Create_Account />} />
         <Route path="/contact" element={<Contact />} />
-
        </Routes>
-       <Footer/>
-       </BrowserRouter>
-    </div>
-  )
+           {!hideLayout &&  <Footer/>}
+
+</Suspense>  )
 }
 
 export default App

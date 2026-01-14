@@ -1,5 +1,6 @@
 import { CreditCard, ShieldCheck, Users } from "lucide-react";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -20,9 +21,9 @@ const Hero = () => {
         </p>
 
         <div className="flex justify-center gap-4">
-          <button className="bg-blue-600 text-white px-6 py-2 rounded-lg">
+          <Link to='/create-account' className="bg-blue-600 text-white px-6 py-2 rounded-lg">
             Get Started
-          </button>
+          </Link>
 
           <button className="border border-blue-600 text-blue-600 px-6 py-2 rounded-lg">
             Learn More

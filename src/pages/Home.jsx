@@ -2,6 +2,7 @@ import React from "react";
 import { CreditCard, Users, ShieldCheck } from "lucide-react";
 import Hero from "../componant/Hero";
 import Login from "./Authentication/Login";
+import Offer from "../componant/OfferSection";
 
 export default function Home() {
   return (
@@ -62,7 +63,9 @@ export default function Home() {
               Advanced security for your financial data.
             </p>
           </div>
+
         </div>
+        <Offer/>
       </section>
     </>
   );
