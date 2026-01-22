@@ -1,36 +1,40 @@
-import React, { Suspense } from 'react'
-import { BrowserRouter, Routes ,Route, useLocation} from 'react-router-dom'
-import Home from './pages/Home'
-import Header from './componant/Header'
-import Contact from './pages/Contact'
-import Loans from './pages/Loans'
-import Accounts from './pages/Accounts'
-import Hero from './componant/Hero'
-import Footer from './componant/footer'
-import Login from './pages/Authentication/Login'
-import "./App.css"
-import Create_Account from './pages/Create_Account'
-const App = () => {
-  const location = useLocation()
+import React from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 
-  const hideLayout = location.pathname === '/login';
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
+import Home from "./pages/Home";
+import Dashboard from "./pages/Dashboard";
+import Accounts from "./pages/Accounts";
+import Loans from "./pages/Loans";
+import Contact from "./pages/Contact";
+import CreateAccount from "./pages/Create_Account";
+import Login from "./pages/Authentication/Login";
+
+function App() {
+  const location = useLocation();
+
+  const hideFooterPages = ["/dashboard", "/accounts", "/loans","/login"];
+  const hideFooter = hideFooterPages.includes(location.pathname);
 
   return (
-<Suspense>
-  {!hideLayout &&  <Header/>}
+    <>
+      <Header />
 
-       <Routes>
-        <Route path="/Hero" element={<Hero />} />
+      <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/loans" element={<Loans />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/accounts" element={<Accounts />} />
-        <Route path="/create-account" element={<Create_Account />} />
+        <Route path="/loans" element={<Loans />} />
+                <Route path="/login" element={<Login />} />
         <Route path="/contact" element={<Contact />} />
-       </Routes>
-           {!hideLayout &&  <Footer/>}
+        <Route path="/create-account" element={<CreateAccount />} />
+      </Routes>
 
-</Suspense>  )
+      {!hideFooter && <Footer />}
+    </>
+  );
 }
 
-export default App
+export default App;

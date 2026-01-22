@@ -1,20 +1,20 @@
 import React from "react";
 import { CreditCard, Users, ShieldCheck } from "lucide-react";
-import Hero from "../componant/Hero";
+import Hero from "../components/Hero";
 import Login from "./Authentication/Login";
-import Offer from "../componant/OfferSection";
+import Offer from "../components/OfferSection";
 
 export default function Home() {
   return (
     <>
       {/* Header */}
       <header className="bg-blue-600 text-white p-10 flex justify-between items-center">
-        <h1 className="text-2xl font-bold hover:text-3xl">
+        <h1 className="font-bold text-3xl">
           HDFC Bank
         </h1>
 
         <div className="flex items-center space-x-6">
-          <nav className="space-x-6">
+          <nav className="space-x-6 ">
             <a href="/" className="hover:underline">Home</a>
             <a href="/Accounts" className="hover:underline">Accounts</a>
             <a href="/Loans" className="hover:underline">Loans</a>
