@@ -1,8 +1,8 @@
 import React from "react";
 import { CreditCard, Users, ShieldCheck } from "lucide-react";
-import Hero from "../components/Hero";
 import Login from "./Authentication/Login";
-import Offer from "../components/OfferSection";
+import Hero from "../components/Hero";
+import OfferSection from "../components/OfferSection";
 
 export default function Home() {
   return (
@@ -28,7 +28,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <Hero />
+      <Hero/>
 
       {/* Features Section */}
       <section className="min-h-screen bg-gray-100 py-16">
@@ -65,7 +65,7 @@ export default function Home() {
           </div>
 
         </div>
-        <Offer/>
+        <OfferSection/>
       </section>
     </>
   );

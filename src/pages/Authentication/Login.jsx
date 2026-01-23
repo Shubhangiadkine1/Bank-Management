@@ -6,7 +6,7 @@ const Login = () => {
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       {/* Login Card */}
       <div className="w-full max-w-md bg-white rounded-3xl shadow-xl p-10 
-                      transform transition-transform duration-300 hover:-translate-y-3 hover:transition-all duration-700 hover:scale-105 hover:shadow-amber-800 hover:shadow-2xl">
+                      transform transition-transform hover:-translate-y-3 hover:transition-all duration-700 hover:scale-105 hover:shadow-amber-800 hover:shadow-2xl">
         <h2 className="text-3xl font-bold text-center text-blue-900 mb-4">
           Sign In
         </h2>
